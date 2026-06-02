@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="style.css">
+    
+    
+    
+    <title>Injeção de Ramais</title>
+</head>
+<body>
+    <div class="formulario">
+        <h1 class="title">Injeção de Ramais</h1>
+        <form action="#" method="post" id="formularioRamal" novalidate>
+            <h2 class="form-group-title">Autenticação SSH</h2>
+            <hr class="underline">
+            <section class="form-section" id="autenticacaoSsh">
+
+                <div class="form-group">
+                    <label for="usuario_ssh">Usuário SSH:</label>
+                    <input type="text" id="usuario_ssh" name="usuario_ssh" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha SSH:</label>
+                    <input type="password" id="senha" name="senha" required >
+                </div>
+                
+                <div class="form-group">
+                    <label for="root_pwd">Senha Root:</label>
+                    <input type="password" id="root_pwd" name="root_pwd" required > 
+                </div>
+            </section>
+            <h2 class="form-group-title">Dados do Ramal</h2>
+            <hr class="underline"> 
+            <section class="form-section" id="dadosRamal">
+                <div class="form-group">
+                    <label for="username">Username (body):</label>
+                    <input type="text" id="username" name="username">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password (body):</label>
+                    <input type="text" id="password" name="password"> 
+                </div>
+                
+                <div class="form-group">
+                    <label for="label">Label / Username:</label>
+                    <input type="text" id="label" name="label" class="label">
+                </div>
+                
+                <div class="form-group">
+                    <label for="server">Server <span class="aspas">(Digitar aspas manualmente)</span>:</label>
+                    <input type="text" id="server" name="server">
+                </div>
+                
+                <!-- A label e o usernameSIP são iguais, então deixei tudo na label -->
+                <!-- <div class="form-group">
+                    <label for="usernameSip">Username SIP:</label>
+                    <input type="text" id="usernameSip" name="usernameSip">
+                </div> -->
+                
+                <div class="form-group">
+                    <label for="secret">Secret:</label>
+                    <input type="text" id="secret" name="secret">
+                </div>
+    
+                <div class="form-group">
+                    <label for="displayName">DisplayName:</label>
+                    <input type="text" id="displayName" name="displayName">
+                </div>
+                
+            </section>
+            <div class="form-button">
+                <button id="criarBtn" class="button">CRIAR</button>
+            </div>
+            
+        </form>
+    </div>
+    <div class="preview">
+        <h2>Preview</h2>
+        <hr class="underline">
+        <div class="preview-box">
+            <h3>else if (req.body.username == "<span class="preview-span" name="username">mxsolucoes</span>" && req.body.password == "<span class="preview-span" name="password">mxsolucoes@7786</span>") {</h3>
+                <h3 class="left-space">label = "<span name="label" class="preview-span">C1-7786</span>";</h3>
+                <h3 class="left-space">server = <span name="server" class="preview-span">atenas</span>;</h3>
+                <h3 class="left-space">username = "<span class="preview-span" name="label">C1-7786</span>";</h3>
+                <h3 class="left-space">secret = "<span name="secret" class="preview-span">Jeanzera@123</span>";</h3>
+                <h3 class="left-space">displayName = "<span name="displayName" class="preview-span">C1-7786</span>";</h3>
+                <h3 class="left-space" name="transport">transport = "tcp";</h3>
+                <h3 class="left-space">sourcePort = "5080";</h3>
+                <h3 class="left-space" name="audioCodecs">audioCodecs = "G729/8000/1 PCMA/8000/1";</h3>
+                <h3 class="left-space">resp.statusCode = 200;</h3>
+                <h3 class="left-space">error = 0;</h3>
+                <h3 class="left-space">}</h3>
+        </div>
+    </div>
+
+    <div class="blur" id="blur"></div>
+    <div id="popupConfirmacao" class="confirmacao">
+        
+        <div class="popup-box">
+            <h2>Tem certeza que deseja criar esse ramal?</h2>
+            <button id="naoBtn" class="button-dois">Não</button>
+            <button id="simBtn" type="submit" form="formularioRamal" class="button-dois">Sim</button>
+        </div>
+
+    </div>
+    
+    <div class="status-conexao" id="status-conexao">
+        <h2>Status conexão<span class="ponto um">.</span><span class="ponto dois">.</span><span class="ponto tres">.</span></h2>
+        <h3 id="status-conexao-text"></h3>
+        <button id="fechar-status">Fechar</button>
+    </div>
+    
+
+    <script type="module" src="script.js"></script>
+    <script type="module" src="injecao.js"></script>
+</body>
+</html>
